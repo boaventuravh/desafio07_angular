@@ -1,1 +1,27 @@
-<p>home-sidebar works!</p>
+<div class="flex">
+    <div class=" {{ sidebarPosition }} fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-white dark:bg-gray-800 shadow-lg overflow-y-auto">
+
+        <div class="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700">
+            <img src="assets/img/ford.png" alt="Logotipo Ford" class="container mx-auto w-[5dvw]">
+            <button (click)="toggleSidebar(false)"
+                    class="text-gray-600 dark:text-gray-300 
+                    hover:text-red-500 cursor-pointer focus:outline-none text-2xl">&times;</button>
+        </div>
+
+        <nav class="p-4">
+            <a href="#" class="block py-2 px-4 rounded text-gray-700 
+                dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Home
+            </a>
+
+            <a href="#" class="block py-2 px-4 rounded text-gray-700 
+                dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Dashboard
+            </a>
+
+            
+        </nav>
+    </div>
+    <button (click)="toggleSidebar(true)"
+        class="translate-3 text-gray-600 dark:text-gray-300 
+        hover:text-green-500 cursor-pointer focus:outline-none text-2xl">&#9776;</button>
+
+</div>
