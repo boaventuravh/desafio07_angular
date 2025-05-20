@@ -1,1 +1,23 @@
-<p>dashboard-page works!</p>
+<div class="h-full">
+    <app-home-sidebar />
+    <section>
+        <app-heading-title />
+    </section>
+
+   
+    <div class="grid grid-cols-1 gap-4 px-4 mt-8 sm:grid-cols-4 sm:px-8" >
+        <app-dashboard-card />
+        <app-dashboard-card />
+        <app-dashboard-card />
+        <app-dashboard-card />
+    </div>
+    
+
+    <section class="h-3/10 w-full">
+        <img class="h-auto w-[70dvw] container mx-auto" src="http://localhost:3001/mustang.png" alt="">
+    </section>
+
+    <section class="h-2/10 w-full">
+        <app-dashboard-table />
+    </section>
+</div>
