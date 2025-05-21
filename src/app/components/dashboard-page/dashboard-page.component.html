@@ -6,15 +6,23 @@
 
    
     <div class="grid grid-cols-1 gap-4 px-4 mt-8 sm:grid-cols-4 sm:px-8" >
-        <app-dashboard-card />
-        <app-dashboard-card />
-        <app-dashboard-card />
-        <app-dashboard-card />
+        <app-dashboard-card-dropdown >
+             <select (change)="onChangeSelect($event)">
+                @for (v of veiculos; track v.id) {
+                    <option value="{{v.id}}">{{v.vehicle}}</option>
+                }
+            </select>
+        </app-dashboard-card-dropdown>
+
+        
+        <app-dashboard-card [titulo]=" 'Total de Vendas' " [valor]=" veiculoSelecionado.volumetotal "/>
+        <app-dashboard-card [titulo]=" 'Conectados' " [valor]=" veiculoSelecionado.connected "/>
+        <app-dashboard-card [titulo]=" 'Update Software' " [valor]=" veiculoSelecionado.softwareUpdates "/>
     </div>
     
 
     <section class="h-3/10 w-full">
-        <img class="h-auto w-[70dvw] container mx-auto" src="http://localhost:3001/mustang.png" alt="">
+        <img class="h-auto w-[70dvw] container mx-auto" src="{{ veiculoSelecionado.img }}" alt="">
     </section>
 
     <section class="h-2/10 w-full">
