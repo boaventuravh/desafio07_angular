@@ -12,8 +12,8 @@ export class DashboardService {
   
   constructor() { }
 
-  getVeiculos(): Observable<Veiculo>{
-    return this.http.get<Veiculo>("http://localhost:3001/vehicles");
+  getVeiculos(): Observable<Veiculo[]>{
+    return this.http.get<Veiculo[]>("http://localhost:3001/vehicles");
   }
 
   getVinInfos(){
