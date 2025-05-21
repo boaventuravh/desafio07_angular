@@ -22,4 +22,8 @@ export class HomeSidebarComponent {
     this.open = state;
     this.sidebarPosition = (state ? 'translate-x-0' : '-translate-x-full')
     }
+
+    logout() {
+      sessionStorage.clear();
+    }
 }
