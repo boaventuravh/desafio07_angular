@@ -9,7 +9,7 @@
   </tr>
   <tr class="bg-blue-700 border-b border-blue-600">
     <td class="px-4 py-3">
-      <input type="text" class="bg-white" placeholder="{{vin}}" value="{{vin}}">
+      <input (change)="onChangeVin($event)" type="text" class="bg-white" placeholder="{{vin}}" value="{{vin}}">
     </td>
     <td class="px-4 py-3">{{odometro}} Km</td>
     <td class="px-4 py-3">{{nivelCombustivel}}%</td>

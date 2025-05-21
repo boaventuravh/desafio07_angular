@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
+import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-dashboard-table',
@@ -13,4 +14,19 @@ export class DashboardTableComponent {
   @Input() status: string = "";
   @Input() lat: number = 0;
   @Input() long: number = 0;
+
+  dashboardService = inject(DashboardService)
+
+  onChangeVin(event: Event){
+    const vin = (event.target as HTMLInputElement).value
+    this.dashboardService.getVinInfos(vin).subscribe({
+      next: (vinInfos) => {
+        this.odometro = vinInfos.odometro;
+        this.nivelCombustivel = vinInfos.nivelCombustivel;
+        this.status = vinInfos.status;
+        this.lat = vinInfos.lat;
+        this.long = vinInfos.long;
+      }
+    })
+  }
 }
