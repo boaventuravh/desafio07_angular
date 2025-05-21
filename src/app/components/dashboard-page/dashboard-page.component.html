@@ -26,6 +26,13 @@
     </section>
 
     <section class="h-2/10 w-full">
-        <app-dashboard-table />
+        <app-dashboard-table 
+        [vin]="veiculoSelecionado.vin"
+        [lat]="vinInfos.lat"
+        [long]="vinInfos.long"
+        [nivelCombustivel]="vinInfos.nivelCombustivel"
+        [odometro]="vinInfos.odometro"
+        [status]="vinInfos.status"
+        />
     </section>
 </div>
