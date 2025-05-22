@@ -1,1 +1,38 @@
-<p>complaints-page works!</p>
+<app-home-sidebar />
+<app-heading-title [titulo]=" 'Chamados' " />
+   
+<app-complaints-empty-modal    
+    [display]="chamados ? 'hidden' : 'flex'"
+/>
+<app-complaints-table>
+    @for(c of chamados; track c.id){
+        <tr class="border-b hover:bg-grey-900 bg-gray-100">
+            <td class="p-3 px-5">{{c.nome}}</td>
+            <td class="p-3 px-5">{{c.email}}</td>
+            <td class="p-3 px-5">{{c.motivoContato}}</td>
+            <td class="p-3 px-5 flex justify-end">
+                <button type="button" (click)="detailItem(detailModal)" class="mr-3 text-sm cursor-pointer bg-blue-500 hover:bg-blue-700 
+                text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">
+                    Detalhar
+                </button>
+                
+                <button type="button" class="text-sm cursor-pointer bg-red-500 hover:bg-red-700 
+                text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Encerrar</button>
+            </td>
+        </tr>
+        <app-complaints-detail-modal
+            #detailModal
+            [display]="'hidden'"
+            [nome]="c.nome"
+            [email]="c.email"
+            [cpf]="c.cpf"
+            [sobrenome]="c.sobrenome"
+            [telefone]="c.telefone"
+            [motivoContato]="c.motivoContato"
+            [meioContato]="c.meioContato"
+            [corpoMensagem]="c.corpoMensagem"
+
+        ></app-complaints-detail-modal>
+    }
+    
+</app-complaints-table>
