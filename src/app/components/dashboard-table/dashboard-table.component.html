@@ -1,4 +1,4 @@
-<table class="m-5 bottom-0 w-full mx-auto bg-blue-800 text-gray-200">
+<table class="m-5 bottom-0 w-full h-fill mx-auto bg-blue-800 text-gray-200">
   <tr class="text-left border-b border-gray-300">
     <th class="px-4 py-3">Código - Vin</th>
     <th class="px-4 py-3">Odômetro</th>
@@ -9,7 +9,15 @@
   </tr>
   <tr class="bg-blue-700 border-b border-blue-600">
     <td class="px-4 py-3">
-      <input (change)="onChangeVin($event)" type="text" class="bg-white" placeholder="{{vin}}" value="{{vin}}">
+      <input
+        class="bg-[#222630] px-4 py-3 outline-none w-[280px] text-white rounded-lg border-2 transition-colors duration-100 border-solid focus:border-[#596A95] border-[#2B3040]"
+        name="text"
+        placeholder="{{vin}}"
+        value="{{vin}}"
+        type="text"
+        (change)="onChangeVin($event)"
+      />
+      
     </td>
     <td class="px-4 py-3">{{odometro}} Km</td>
     <td class="px-4 py-3">{{nivelCombustivel}}%</td>
