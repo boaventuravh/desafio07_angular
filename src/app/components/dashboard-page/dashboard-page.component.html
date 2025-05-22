@@ -4,15 +4,16 @@
         <app-heading-title />
     </section>
    
-    <div class="px-4 mt-8 mb-8 sm:grid-cols-4 sm:px-8" >
+    <div class="px-4 mt-8 mb-8 w-full sm:px-8" >
+
         <app-dashboard-card-dropdown >
-             <select (change)="onChangeSelect($event)">
+            <select (change)="onChangeSelect($event)" class="border border-gray-300 rounded-full text-gray-600 
+                h-10 w-full pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
                 @for (v of veiculos; track v.id) {
-                    <option value="{{v.id}}">{{v.vehicle}}</option>
+                            <option value="{{v.id}}">{{v.vehicle}}</option>      
                 }
             </select>
-        </app-dashboard-card-dropdown>      
-        
+        </app-dashboard-card-dropdown>
     </div>    
 
     <div class="grid grid-cols-2">
