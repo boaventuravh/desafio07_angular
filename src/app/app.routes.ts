@@ -10,24 +10,28 @@ export const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',        
-        component: LoginPageComponent
+        component: LoginPageComponent,
+        title: 'Login' 
     },
     {
         path: 'home',
         pathMatch: 'full',
         canActivate: [loginGuard],
-        component: HomePageComponent        
+        component: HomePageComponent,
+        title: 'Home'         
     },
     {
         path: 'dashboard',
         pathMatch: 'full',
         canActivate: [loginGuard],
-        component: DashboardPageComponent
+        component: DashboardPageComponent,
+        title: 'Dashboard' 
     },
     {
         path: 'chamados',
         pathMatch: 'full',
         canActivate: [loginGuard],
-        component: ComplaintsPageComponent
+        component: ComplaintsPageComponent,
+        title: 'Chamados' 
     }
 ];
