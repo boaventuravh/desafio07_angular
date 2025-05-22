@@ -29,4 +29,17 @@ export class ComplaintsPageComponent implements OnInit {
     modal.changeVisibility();
     
   }
+
+  excluirChamado(id: number) {
+  this.complaintsService.deleteChamado(id).subscribe({
+    next: () => {
+      // Atualiza a lista local removendo o item deletado
+      this.chamados = this.chamados.filter(c => c.id !== id);
+    },
+    error: (err) => {
+      console.error('Erro ao excluir chamado:', err);
+      // Aqui você pode adicionar tratamento de erro (ex: mostrar mensagem para o usuário)
+    }
+  });
+}
 }

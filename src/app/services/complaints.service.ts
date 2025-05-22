@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Chamado } from '../models/complaint';
 
@@ -9,10 +9,15 @@ import { Chamado } from '../models/complaint';
 export class ComplaintsService {
 
   http = inject(HttpClient);
+  
 
   constructor() { }
 
   getChamados(): Observable<Chamado[]>{
-    return this.http.get<Chamado[]>("http://localhost:3001/complaints")
+    return this.http.get<Chamado[]>("http://localhost:3001/complaints");
+  }
+
+  deleteChamado(id: number): Observable<Chamado>{
+    return this.http.delete<Chamado>(`http://localhost:3001/complaints/${id}`);
   }
 }
