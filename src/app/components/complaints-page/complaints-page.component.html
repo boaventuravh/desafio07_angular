@@ -2,7 +2,7 @@
 <app-heading-title [titulo]=" 'Chamados' " />
    
 <app-complaints-empty-modal    
-    [display]="chamados ? 'hidden' : 'flex'"
+    [display]="chamados.length === 0 ? 'flex' : 'hidden'"
 />
 <app-complaints-table>
     @for(c of chamados; track c.id){
@@ -16,7 +16,7 @@
                     Detalhar
                 </button>
                 
-                <button type="button" class="text-sm cursor-pointer bg-red-500 hover:bg-red-700 
+                <button type="button" (click)="excluirChamado(c.id)" class="text-sm cursor-pointer bg-red-500 hover:bg-red-700 
                 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline">Encerrar</button>
             </td>
         </tr>
