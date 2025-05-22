@@ -38,10 +38,11 @@ export class DashboardPageComponent implements OnInit {
     this.dashboardService.getVeiculos().subscribe({
       next: (veiculos) => {
         this.veiculos =  Object.values(veiculos) as Veiculo[];
-        this.veiculoSelecionado = veiculos[0];        
+        this.veiculoSelecionado = veiculos[0];
+        this.updateVinInfos(this.veiculoSelecionado);         
       }
     });
-    this.updateVinInfos(this.veiculoSelecionado);    
+       
   }
 
   onChangeSelect(event: Event){
