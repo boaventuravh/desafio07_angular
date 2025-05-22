@@ -9,4 +9,5 @@ import { Component, Input } from '@angular/core';
 export class DashboardCardComponent {
   @Input() titulo: string = '';
   @Input() valor: number = 0;
+  @Input() icon: string = '';
 }
